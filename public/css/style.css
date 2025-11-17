@@ -57,3 +57,18 @@ img {
 #main {
   min-height: 1000px;
 }
+
+#animalTable {
+  border-collapse: collapse;
+}
+
+td, th{
+  border: 1px solid #ddd;
+  padding: 8px;
+}
+
+th {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: left;
+}

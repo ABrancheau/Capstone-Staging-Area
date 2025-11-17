@@ -1,0 +1,22 @@
+[
+    {
+        "name": "Spot",
+        "trainingStatus": "intake",
+        "reserved": "False"
+    },
+    {
+        "name": "Rex",
+        "trainingStatus": "Phase I",
+        "reserved": "False"
+    },
+    {
+        "name": "Bella",
+        "trainingStatus": "In Service",
+        "reserved": "True"
+    },
+    {
+        "name": "Rover",
+        "trainingStatus": "In Service",
+        "reserved": "false"
+    }
+]
