@@ -1,0 +1,50 @@
+[
+    {
+        "name": "George",
+        "reserved": "false",
+        "gender": "Male",
+        "age": "2",
+        "weight": "20",
+        "acquisitionDate": "01-01-06",
+        "acquisitionCountry": "Morocco",
+        "trainingStatus": "Intake",
+        "inServiceCountry": "United States",
+        "animalType": "Monkey",
+        "tailLength": "0",
+        "bodyHeight": "24",
+        "bodyLength": "12",
+        "species": "Macaque"
+    },
+    {
+        "name": "Kong",
+        "reserved": "false",
+        "gender": "Male",
+        "age": "5",
+        "weight": "50",
+        "acquisitionDate": "01-01-33",
+        "acquisitionCountry": "United States",
+        "trainingStatus": "Phase I",
+        "inServiceCountry": "Japan",
+        "animalType": "Monkey",
+        "tailLength": "0",
+        "bodyHeight": "24",
+        "bodyLength": "12",
+        "species": "Squirrel Monkey"
+    },
+    {
+        "name": "Tammy",
+        "reserved": "false",
+        "gender": "Female",
+        "age": "7",
+        "weight": "15",
+        "acquisitionDate": "01-01-10",
+        "acquisitionCountry": "Brazil",
+        "trainingStatus": "In Service",
+        "inServiceCountry": "Mexico",
+        "animalType": "Monkey",
+        "tailLength": "0",
+        "bodyHeight": "24",
+        "bodyLength": "12",
+        "species": "Tamarin"
+    }
+]
