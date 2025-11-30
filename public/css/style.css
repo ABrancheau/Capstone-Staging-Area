@@ -5,7 +5,8 @@ body {
 }
 
 a {
-  color: #696969;
+  color: #e30047;
+  text-decoration: none;
 }
 
 img {
@@ -35,7 +36,7 @@ img {
   margin: 0;
   padding: 0x;
 }
-
+ 
 #navigation li {
   display: inline;
   float: left;
@@ -51,24 +52,32 @@ img {
 }
 
 #navigation li.selected a {
-  color: #d3d3d3;
+  color: #7b0330;
 }
 
 #main {
   min-height: 1000px;
 }
 
-#animalTable {
+table{
   border-collapse: collapse;
+}
+
+#animalTable {
+  background-color: white;
+  width: fit-content;
 }
 
 td, th{
   border: 1px solid #ddd;
   padding: 8px;
+  width: 200px;
 }
 
 th {
   padding-top: 12px;
   padding-bottom: 12px;
   text-align: left;
+  background-color: #ec0f54;
+  color: white;
 }

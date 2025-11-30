@@ -1,5 +1,6 @@
 [
     {
+        "code": "DOG001",
         "name": "Spot",
         "reserved": "false",
         "gender": "Male",
@@ -12,6 +13,7 @@
         "breed": "German Shepherd"
     },
     {
+        "code": "DOG002",
         "name": "Rex",
         "reserved": "false",
         "gender": "Male",
@@ -24,6 +26,7 @@
         "breed": "Great Dane"
     },
     {
+        "code": "DOG003",
         "name": "Bella",
         "reserved": "true",
         "gender": "Female",
@@ -36,6 +39,7 @@
         "breed": "Chihuahua"
     },
     {
+        "code": "DOG004",
         "name": "Rover",
         "reserved": "false",
         "gender": "Male",
@@ -49,6 +53,7 @@
     },
 
     {
+        "code": "MON001",
         "name": "George",
         "reserved": "false",
         "gender": "Male",
@@ -64,6 +69,7 @@
         "species": "Macaque"
     },
     {
+        "code": "MON002",
         "name": "Kong",
         "reserved": "false",
         "gender": "Male",
@@ -79,6 +85,7 @@
         "species": "Squirrel Monkey"
     },
     {
+        "code": "MON003",
         "name": "Tammy",
         "reserved": "false",
         "gender": "Female",

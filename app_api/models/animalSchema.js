@@ -5,6 +5,7 @@ const options = {discriminatorKey: 'animalType'};
 // define the animal schema
 const animalSchema = new mongoose.Schema(
     {
+        code: {type: String, required: true},
         name: {type: String, required: true, index: true},
         reserved: {type: Boolean, required: true, index: true},
         gender: {type: String, required: true},

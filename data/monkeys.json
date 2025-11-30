@@ -1,5 +1,6 @@
 [
     {
+        "code": "MON001",
         "name": "George",
         "reserved": "false",
         "gender": "Male",
@@ -16,6 +17,7 @@
         "species": "Macaque"
     },
     {
+        "code": "MON002",
         "name": "Kong",
         "reserved": "false",
         "gender": "Male",
@@ -32,6 +34,7 @@
         "species": "Squirrel Monkey"
     },
     {
+        "code": "MON003",
         "name": "Tammy",
         "reserved": "false",
         "gender": "Female",
