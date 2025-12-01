@@ -1,0 +1,25 @@
+<div class="row">
+    <div class="animalTable">
+        <table>
+            <tr>
+				<th>Name</th>
+                <th>Breed/Species</th>
+				<th>Training Status</th>
+				<th>Reserved</th>
+			</tr>
+			<tr *ngFor="let animal of animals">
+				<td>{{animal.name}}</td>
+                <td>
+                    @if (animal.breed != null){
+                        {{animal.breed}}
+                    }
+                    @else if(animal.species != null){
+                        {{animal.species}}
+                    }
+                </td>
+				<td>{{animal.trainingStatus}}</td>
+				<td>{{animal.reserved}}</td>
+			</tr>
+        </table>
+    </div>
+</div>

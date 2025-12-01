@@ -11,8 +11,17 @@ const reservation = async function(req, res, next) {
     await fetch(animalsEndpoint, options)
         .then((res) => res.json())
         .then((json) => {
-            // let message = null;
-            res.render("reservation", {title: "Grazioso Salvare", animals: json});
+            let message = null;
+            if(!(json instanceof Array)) {
+                message = "API lookup error";
+                json = [];
+            }
+            else{
+                if(!json.length){
+                    message = "No animals exist in the database.";
+                }
+            }
+            res.render("reservation", {title: "Grazioso Salvare", animals: json, message});
         })
         .catch((err) => res.status(500).send(err.message));
 };

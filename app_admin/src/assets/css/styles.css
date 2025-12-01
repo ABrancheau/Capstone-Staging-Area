@@ -58,12 +58,17 @@ img {
   color: #7b0330;
 }
 
+#navbar-brand{
+  font-size: 14px;
+}
+
 #main {
   min-height: 1000px;
 }
 
 table{
   border-collapse: collapse;
+  background-color: white;
 }
 
 #animalTable {
