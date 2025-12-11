@@ -2,9 +2,9 @@ import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
 import { AnimalData } from '../services/animal-data';
-// import { Animal } from '../models/animal';
+import { Animal, Dog, Monkey } from '../models/animal';
 
-import { animals } from '../data/animals';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-animal-listing',
@@ -14,20 +14,25 @@ import { animals } from '../data/animals';
   styleUrl: './animal-listing.css',
   providers: [AnimalData]
 })
-export class AnimalListing implements OnInit{
-  
-  animals: Array<any> = animals;
-  
-  constructor() {}
-
-  ngOnInit(): void {
-    
-  }
-/*animals!: Animal[];
+export class AnimalListing implements OnInit {
+ 
+  animals!: any[];
+  dogs!: Dog[];
+  monkeys!: Monkey[];
   message: string = '';
 
- constructor(private animalDataService: AnimalData){
+ constructor(
+  private animalDataService: AnimalData,
+  private router: Router
+  ) {
     console.log('animal-listing constructor');
+  }
+
+  public addDog(): void {
+    this.router.navigate(['add-dog']);
+  }
+  public addMonkey(): void{
+    this.router.navigate(['add-monkey']);
   }
 
   private getStuff(): void{
@@ -48,11 +53,62 @@ export class AnimalListing implements OnInit{
         error: (error: any) => {
           console.log('Error: ' + error);
         }
-      })
+      });
+      
+
+      this.animalDataService.getDogs()
+      .subscribe({
+        next: (value: any) => {
+          this.dogs = value;
+
+          if(value.length > 0){
+            this.message = 'There are ' 
+              + value.length + ' dogs available.';
+          }
+          else{
+            this.message = 'There were no dogs retrieved from the database.';
+          }
+          console.log(this.message);
+        },
+        error: (error: any) => {
+          console.log('Error: ' + error);
+        }
+      });
+
+      this.animalDataService.getMonkeys()
+      .subscribe({
+        next: (value: any) => {
+          this.monkeys = value;
+
+          if(value.length > 0){
+            this.message = 'There are ' 
+              + value.length + ' monkeys available.';
+          }
+          else{
+            this.message = 'There were no monkeys retrieved from the database.';
+          }
+          console.log(this.message);
+        },
+        error: (error: any) => {
+          console.log('Error: ' + error);
+        }
+      });
+  }
+
+  public editDog(dog: Dog) {
+    localStorage.removeItem('animalCode');
+    localStorage.setItem('animalCode', dog.code);
+    this.router.navigate(['edit-dog']);
+  }
+
+  public editMonkey(monkey: Monkey) {
+    localStorage.removeItem('animalCode');
+    localStorage.setItem('animalCode', monkey.code);
+    this.router.navigate(['edit-monkey']);
   }
 
   ngOnInit(): void {
     console.log('ngOnInit');
     this.getStuff();
-  }*/
+  }
 }

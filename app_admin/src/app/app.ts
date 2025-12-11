@@ -6,7 +6,7 @@ import { AnimalListing } from './animal-listing/animal-listing';
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [CommonModule, RouterOutlet, AnimalListing],
+  imports: [CommonModule, RouterOutlet],
   templateUrl: './app.html',
   styleUrl: './app.css'
 })

@@ -64,6 +64,8 @@ process.on('SIGTERM', () => {
 // Make initial connection to DB
 connect();
 
-// Import Mongoose schema
+// Import Mongoose schemas
 require('./animalSchema');
+require('./dogSchema');
+require('./monkeySchema');
 module.exports = mongoose;

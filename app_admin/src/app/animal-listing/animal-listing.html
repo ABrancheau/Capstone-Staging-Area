@@ -1,24 +1,38 @@
+<div class="logo">
+    <img src="assets/images/Grazioso-Salvare-Logo.jpg" 
+            alt="Grazioso Salvare Logo">
+</div>
+<div>
+    <button (click)="addDog()" class="btn btn-info">Add Dog</button>
+    <button (click)="addMonkey()" class="btn btn-info">Add Monkey</button>
+</div>
 <div class="row">
     <div class="animalTable">
         <table>
             <tr>
 				<th>Name</th>
-                <th>Breed/Species</th>
+                <th>Animal Type</th>
 				<th>Training Status</th>
 				<th>Reserved</th>
+                <th>Edit</th>
 			</tr>
-			<tr *ngFor="let animal of animals">
-				<td>{{animal.name}}</td>
+			<tr *ngFor="let dog of dogs">
+				<td>{{ dog.name }}</td>
+                <td>{{ dog.animalType }}</td>
+				<td>{{ dog.trainingStatus }}</td>
+				<td>{{ dog.reserved }}</td>
                 <td>
-                    @if (animal.breed != null){
-                        {{animal.breed}}
-                    }
-                    @else if(animal.species != null){
-                        {{animal.species}}
-                    }
+                    <button (click)="editDog(dog)" class="btn btn-info">Edit Dog</button>
                 </td>
-				<td>{{animal.trainingStatus}}</td>
-				<td>{{animal.reserved}}</td>
+			</tr>
+            <tr *ngFor="let monkey of monkeys">
+				<td>{{ monkey.name }}</td>
+                <td>{{ monkey.animalType }}</td>
+				<td>{{ monkey.trainingStatus }}</td>
+				<td>{{ monkey.reserved }}</td>
+                <td>
+                    <button (click)="editMonkey(monkey)" class="btn btn-info">Edit Monkey</button>
+                </td>
 			</tr>
         </table>
     </div>
