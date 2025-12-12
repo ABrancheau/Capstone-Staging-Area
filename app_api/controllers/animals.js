@@ -179,6 +179,84 @@ const animalsAddAnimal = async(req, res) => {
 
 };
 
+// POST: /monkeys - adds a new monkey
+// regardless of outcome, response must include HTML status code
+// and JSON message to requesting client
+const monkeysAddMonkey = async(req, res) => {
+    const newMonkey = new Monkey({
+        code: req.body.code,
+        name: req.body.name,
+        reserved: req.body.reserved,
+        gender: req.body.gender,
+        age: req.body.age,
+        weight: req.body.weight,
+        acquisitionDate: req.body.acquisitionDate,
+        acquisitionCountry: req.body.acquisitionCountry,
+        trainingStatus: req.body.trainingStatus,
+        inServiceCountry: req.body.inServiceCountry,
+        animalType: req.body.animalType,
+        tailLength: req.body.tailLength,
+        bodyHeight: req.body.bodyHeight,
+        bodyLength: req.body.bodyLength,
+        species: req.body.species
+    });
+
+    const q = await newMonkey.save();
+
+        if(!q){
+            // database returned no data
+            return res
+                .status(400)
+                .json(err);
+        }
+        else {
+            // return new animal
+            return res
+                .status(201)
+                .json(q);
+        }
+
+};
+
+
+
+
+// POST: /dogs - adds a new dog
+// regardless of outcome, response must include HTML status code
+// and JSON message to requesting client
+const dogsAddDog = async(req, res) => {
+    const newDog = new Dog({
+        code: req.body.code,
+        name: req.body.name,
+        reserved: req.body.reserved,
+        gender: req.body.gender,
+        age: req.body.age,
+        weight: req.body.weight,
+        acquisitionDate: req.body.acquisitionDate,
+        acquisitionCountry: req.body.acquisitionCountry,
+        trainingStatus: req.body.trainingStatus,
+        inServiceCountry: req.body.inServiceCountry,
+        animalType: req.body.animalType,
+        breed: req.body.breed
+    });
+
+    const q = await newDog.save();
+
+        if(!q){
+            // database returned no data
+            return res
+                .status(400)
+                .json(err);
+        }
+        else {
+            // return new animal
+            return res
+                .status(201)
+                .json(q);
+        }
+
+};
+
 
 // PUT: /animals/:animalCode - edits an existing animal
 // regardless of outcome, response must include HTML status code
@@ -323,6 +401,8 @@ module.exports = {
     dogsFindByCode,
     monkeysFindByCode,
     animalsAddAnimal,
+    dogsAddDog,
+    monkeysAddMonkey,
     animalsUpdateAnimal,
     dogsUpdateDog,
     monkeysUpdateMonkey

@@ -1,10 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
-
+import { Router } from '@angular/router';
 import { AnimalData } from '../services/animal-data';
 import { Animal, Dog, Monkey } from '../models/animal';
-
-import { Router } from '@angular/router';
+import { Authentication } from '../services/authentication';
 
 @Component({
   selector: 'app-animal-listing',
@@ -23,7 +22,8 @@ export class AnimalListing implements OnInit {
 
  constructor(
   private animalDataService: AnimalData,
-  private router: Router
+  private router: Router,
+  private authenticationSerice: Authentication
   ) {
     console.log('animal-listing constructor');
   }
@@ -105,6 +105,10 @@ export class AnimalListing implements OnInit {
     localStorage.removeItem('animalCode');
     localStorage.setItem('animalCode', monkey.code);
     this.router.navigate(['edit-monkey']);
+  }
+
+  public isLoggedIn() {
+    return this.authenticationSerice.isLoggedIn();
   }
 
   ngOnInit(): void {
