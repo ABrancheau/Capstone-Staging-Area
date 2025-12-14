@@ -21,6 +21,8 @@ export class AddDog implements OnInit{
     private animalService: AnimalData
   ){}
 
+  // animalType is preset to Dog, with the html input field in the form set to
+  // read only, ensuring proper animal type set
   ngOnInit() {
     this.addDogForm = this.formBuilder.group({
       _id: [],
@@ -34,11 +36,12 @@ export class AddDog implements OnInit{
       acquisitionCountry: ['', Validators.required],
       trainingStatus: ['', Validators.required],
       inServiceCountry: ['', Validators.required],
-      animalType: ['', Validators.required],
+      animalType: ['Dog', Validators.required],
       breed: ['', Validators.required]
     })
   }
 
+  // Validates, then sends Dog data to the database
   public onSubmitDog() {
     this.submitted = true;
 
@@ -46,7 +49,6 @@ export class AddDog implements OnInit{
       this.animalService.addDog(this.addDogForm.value)
         .subscribe({
           next: (data: any) => {
-            console.log(data);
             this.router.navigate(['']);
           },
           error: (error: any) => {
@@ -56,6 +58,7 @@ export class AddDog implements OnInit{
     }
   }
 
+  // function for managing form controls in the html
   get f() {return this.addDogForm.controls;}
 
 }

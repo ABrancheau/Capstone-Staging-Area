@@ -1,3 +1,4 @@
+// parent Animal class that Dog and Monkey inherit from
 export interface Animal{
     _id: string,    // internal primary key in MongoDB
     code: string,
@@ -13,10 +14,11 @@ export interface Animal{
     animalType: string
 }
 
+// child classes that add animal type specific
+// attributes
 export interface Dog extends Animal{
     breed: string,
 }
-
 export interface Monkey extends Animal{
     tailLength: string,
     bodyHeight: string,

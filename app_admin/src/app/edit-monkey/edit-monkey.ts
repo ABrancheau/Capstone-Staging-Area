@@ -34,9 +34,8 @@ export class EditMonkey implements OnInit{
       return;
     }
 
-    console.log('EditMonkey::ngOnInit');
-    console.log('animalcode:' + animalCode);
-
+  // animalType is preset to Monkey, with the html input field in the form set to
+  // read only, ensuring proper animal type set
     this.editMonkeyForm = this.formBuilder.group({
       _id: [],
       code: ['', Validators.required],
@@ -49,13 +48,15 @@ export class EditMonkey implements OnInit{
       acquisitionCountry: ['', Validators.required],
       trainingStatus: ['', Validators.required],
       inServiceCountry: ['', Validators.required],
-      animalType: ['', Validators.required],
+      animalType: ['Monkey', Validators.required],
       tailLength: ['', Validators.required],
       bodyHeight: ['', Validators.required],
       bodyLength: ['', Validators.required],
       species: ['', Validators.required]
     })
 
+    // finds Dog in the database by animalCode and preloads the form with existing
+    // information
     this.animalDataService.getMonkey(animalCode)
       .subscribe({
         next: (value: any) => {
@@ -75,6 +76,7 @@ export class EditMonkey implements OnInit{
       })
   }
 
+  // Validates, then sends Monkey data to the database
   public onSubmitMonkey() {
     this.submitted = true;
 
@@ -92,6 +94,7 @@ export class EditMonkey implements OnInit{
     }
   }
 
+  // function for managing form controls in the html
   get f() { return this.editMonkeyForm.controls; }
 
 }

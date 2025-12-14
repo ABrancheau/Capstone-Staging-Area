@@ -6,6 +6,7 @@ import { EditDog } from './edit-dog/edit-dog';
 import { EditMonkey } from './edit-monkey/edit-monkey';
 import { Login } from './login/login';
 
+// routes paths to the appropriate components
 export const routes: Routes = [
     {path: 'add-dog', component: AddDog},
     {path: 'add-monkey', component: AddMonkey},

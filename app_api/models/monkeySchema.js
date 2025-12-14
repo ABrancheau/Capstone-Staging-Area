@@ -1,7 +1,7 @@
 const animalModel = require('./animalSchema');
 const mongoose = require('mongoose');
 
-//define the monkeySchema
+//define the monkeySchema with discriminator
 const monkeySchema = new mongoose.Schema({
     tailLength: {type: String, required: true},
     bodyHeight: {type: String, required: true},

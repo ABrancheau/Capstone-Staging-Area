@@ -103,8 +103,7 @@ export class Authentication {
     this.animalDataService.register(user,passwd)
       .subscribe({
         next: (value: any) => {
-          if(value)
-          {
+          if(value){
             console.log(value);
             this.authResp = value;
             this.saveToken(this.authResp.token);

@@ -10,6 +10,8 @@ import { Navbar } from './navbar/navbar';
   templateUrl: './app.html',
   styleUrl: './app.css'
 })
+
+// sets the admin page title
 export class App {
   protected readonly title = signal('Grazioso Salvare Admin!');
 }

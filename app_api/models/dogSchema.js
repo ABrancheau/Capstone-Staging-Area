@@ -1,7 +1,7 @@
 const animalModel = require('./animalSchema');
 const mongoose = require('mongoose');
 
-// define the dogSchema
+// define the dogSchema with discriminator
 const dogSchema = new mongoose.Schema({
     breed: {type: String, required: true},
 });

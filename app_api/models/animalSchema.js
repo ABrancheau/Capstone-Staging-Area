@@ -2,7 +2,7 @@ const mongoose = require('mongoose');
 
 const options = {discriminatorKey: 'animalType'};
 
-// define the animal schema
+// define the animal schema with discriminator
 const animalSchema = new mongoose.Schema(
     {
         code: {type: String, required: true},

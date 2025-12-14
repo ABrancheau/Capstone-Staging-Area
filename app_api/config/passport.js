@@ -4,6 +4,8 @@ const mongoose = require("mongoose");
 const Users = require("../models/user");
 const User = mongoose.model("users");
 
+// asynchronous method to compare given email and password
+// to credentials stored in the database
 passport.use(
     new LocalStrategy(
         {

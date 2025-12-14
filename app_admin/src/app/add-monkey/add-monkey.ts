@@ -20,7 +20,9 @@ export class AddMonkey implements OnInit{
     private router: Router,
     private animalService: AnimalData
   ){}
-
+  
+  // animalType is preset to Monkey, with the html input field in the form set to
+  // read only, ensuring proper animal type set
   ngOnInit() {
     this.addMonkeyForm = this.formBuilder.group({
       _id: [],
@@ -34,7 +36,7 @@ export class AddMonkey implements OnInit{
       acquisitionCountry: ['', Validators.required],
       trainingStatus: ['', Validators.required],
       inServiceCountry: ['', Validators.required],
-      animalType: ['', Validators.required],
+      animalType: ['Monkey', Validators.required],
       tailLength: ['', Validators.required],
       bodyHeight: ['', Validators.required],
       bodyLength: ['', Validators.required],
@@ -42,6 +44,7 @@ export class AddMonkey implements OnInit{
     })
   }
 
+  // Validates, then sends Monkey data to the database
   public onSubmitMonkey() {
     this.submitted = true;
 
@@ -59,6 +62,7 @@ export class AddMonkey implements OnInit{
     }
   }
 
+  // function for managing form controls in the html
   get f() {return this.addMonkeyForm.controls;}
 
 }

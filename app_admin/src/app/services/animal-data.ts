@@ -23,6 +23,7 @@ export class AnimalData {
   monkeyUrl = 'http://localhost:3000/api/monkeys';
   baseUrl = 'http://localhost:3000/api';
 
+  // functions to get or add Animals from the database
   getAnimals(): Observable<any[]> {
     return this.http.get<any[]>(this.animalUrl);
   }
@@ -31,14 +32,13 @@ export class AnimalData {
   }
 
 
-
+  // functions to get, add, or update Dogs in the database
   getDogs(): Observable<Dog[]>{
     return this.http.get<Dog[]>(this.dogUrl);
   }
   addDog(formData: Dog) : Observable<Dog>{
     return this.http.post<Dog>(this.dogUrl, formData);
   }
-
   getDog(animalCode: string) : Observable<Dog[]>{
     return this.http.get<Dog[]>(this.dogUrl + '/' + animalCode);
   }
@@ -47,14 +47,13 @@ export class AnimalData {
   }
 
 
-  
+  // functions to get, add, or update Monkeys in the database
   getMonkeys(): Observable<Monkey[]>{
     return this.http.get<Monkey[]>(this.monkeyUrl);
   }
   addMonkey(formData: Monkey) : Observable<Monkey>{
     return this.http.post<Monkey>(this.monkeyUrl, formData);
   }
-
   getMonkey(animalCode: string) : Observable<Monkey[]>{
     return this.http.get<Monkey[]>(this.monkeyUrl + '/' + animalCode);
   }
@@ -68,11 +67,13 @@ export class AnimalData {
     // console.log('Inside AnimalDataService::login');
     return this.handleAuthAPICall('login', user, password);
   }
+  
   // Call to /register endpoint, creates user and returns JWT
   register(user: User, password: string) : Observable<AuthResponse> {
     // console.log('Inside AnimalDataService::register');
     return this.handleAuthAPICall('register', user, password);
   }
+
   // helper method to process both login and register methods
   handleAuthAPICall(endpoint: string, user: User, password: string) :
   Observable<AuthResponse> {

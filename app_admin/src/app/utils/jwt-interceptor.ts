@@ -5,6 +5,8 @@ import { HttpInterceptor, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { Authentication } from '../services/authentication';
 
+// interceptor class to add JSON web token authentication to all POST and
+// PUT queries to the database
 @Injectable()
 export class JwtInterceptor implements HttpInterceptor {
   constructor(
@@ -14,7 +16,6 @@ export class JwtInterceptor implements HttpInterceptor {
   intercept(request: HttpRequest<any>, next: HttpHandler):
       Observable<HttpEvent<any>> {
     var isAuthAPI: boolean;
-    // console.log('Interceptor::URL' + request.url);
     if(request.url.startsWith('register')) {
       isAuthAPI = true;
     }
@@ -24,7 +25,6 @@ export class JwtInterceptor implements HttpInterceptor {
 
     if(this.authenticationService.isLoggedIn() && !isAuthAPI) {
       let token = this.authenticationService.getToken();
-      // console.log(token);
       const authReq = request.clone({
         setHeaders: {
           Authorization: `Bearer ${token}`

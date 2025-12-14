@@ -31,6 +31,8 @@ export class Login {
   ngOnInit(): void {
   }
 
+  // confirms email and password are present, giving an error if not,
+  // going to doLogin if valid
   public onLoginSubmit(): void {
     this.formError = '';
     if (!this.credentials.email || !this.credentials.password ||
@@ -42,25 +44,22 @@ export class Login {
     }
   }
 
+  // creates a user instance and authenicates their credentials
   private doLogin(): void {
     let newUser = {
       name: this.credentials.name,
       email: this.credentials.email
     } as User;
-    // console.log('LoginComponent::doLogin');
-    // console.log(this.credentials);
 
     this.authenticationService.login(newUser,
     this.credentials.password);
     if(this.authenticationService.isLoggedIn())
     {
-      // console.log('Router::Direct');
       this.router.navigate(['']);
     } else {
       var timer = setTimeout(() => {
         if(this.authenticationService.isLoggedIn())
         {
-          // console.log('Router::Pause');
           this.router.navigate(['']);
         }
       },3000);

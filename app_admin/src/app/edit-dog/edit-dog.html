@@ -104,7 +104,7 @@ f['acquisitionCountry'].errors }">
 
         <div class="form-group">
             <label>Animal Type:</label>
-            <input type="text" formControlName="animalType" placeholder="AnimalType" class="form-control" [ngClass]="{ 'is-invalid': submitted && f['animalType'].errors
+            <input type="text" formControlName="animalType" readonly class="form-control" [ngClass]="{ 'is-invalid': submitted && f['animalType'].errors
 }">
             <div *ngIf="submitted && f['animalType'].errors">
                 <div *ngIf="f['animalType'].errors?.['required']">

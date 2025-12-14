@@ -262,9 +262,6 @@ const dogsAddDog = async(req, res) => {
 // regardless of outcome, response must include HTML status code
 // and JSON message to the requesting client
 const animalsUpdateAnimal = async(req, res) => {
-    // uncommented for debugging
-    console.log(req.params);
-    console.log(req.body);
     const q = await Model
         .findOneAndUpdate(
             { 'code' : req.params.animalCode },
@@ -299,9 +296,6 @@ const animalsUpdateAnimal = async(req, res) => {
         .status(201)
         .json(q);
     }
-
-    // Uncomment to see results of operation on console
-    // console.log(q);
 };
 
 
@@ -309,9 +303,6 @@ const animalsUpdateAnimal = async(req, res) => {
 // regardless of outcome, response must include HTML status code
 // and JSON message to the requesting client
 const dogsUpdateDog = async(req, res) => {
-    // uncommented for debugging
-    console.log(req.params);
-    console.log(req.body);
     const q = await Model
         .findOneAndUpdate(
             { 'code' : req.params.animalCode },
@@ -342,9 +333,6 @@ const dogsUpdateDog = async(req, res) => {
         .status(201)
         .json(q);
     }
-
-    // Uncomment to see results of operation on console
-    // console.log(q);
 };
 
 
@@ -352,9 +340,6 @@ const dogsUpdateDog = async(req, res) => {
 // regardless of outcome, response must include HTML status code
 // and JSON message to the requesting client
 const monkeysUpdateMonkey = async(req, res) => {
-    // uncommented for debugging
-    console.log(req.params);
-    console.log(req.body);
     const q = await Model
         .findOneAndUpdate(
             { 'code' : req.params.animalCode },
@@ -388,9 +373,6 @@ const monkeysUpdateMonkey = async(req, res) => {
         .status(201)
         .json(q);
     }
-
-    // Uncomment to see results of operation on console
-    // console.log(q);
 };
 
 module.exports = {

@@ -9,9 +9,7 @@ const authController = require("../controllers/authentication");
 
 // Method to authenticate our JWT
 function authenticateJWT(req, res, next) {
-    // console.log('In Middleware');
     const authHeader = req.headers['authorization'];
-    // console.log('Auth Header: ' + authHeader);
     if(authHeader == null) {
             console.log('Auth header required but not present.');
             return res.sendStatus(401);
@@ -23,14 +21,11 @@ function authenticateJWT(req, res, next) {
             return res.sendStatus(501);
         }
         const token = authHeader.split(' ')[1];
-        // console.log('Token: ' + token);
         if(token == null) {
             console.log('Null bearer token');
             return res.sendStatus(401);
         }
-        // console.log(process.env.JWT_SECRET);
-
-        // console.log(jwt.decode(token));
+        
         const verified = jwt.verify(token, process.env.JWT_SECRET, (err, verified) => {
             if(err) {
                 return res.sendStatus(401).json('Token validation error.');

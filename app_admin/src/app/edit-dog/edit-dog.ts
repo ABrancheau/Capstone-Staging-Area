@@ -37,9 +37,8 @@ export class EditDog {
       return;
     }
 
-    console.log('EditDog::ngOnInit');
-    console.log('animalcode:' + animalCode);
-
+    // animalType is preset to Dog, with the html input field in the form set to
+    // read only, ensuring proper animal type set
     this.editDogForm = this.formBuilder.group({
       _id: [],
       code: ['', Validators.required],
@@ -52,10 +51,12 @@ export class EditDog {
       acquisitionCountry: ['', Validators.required],
       trainingStatus: ['', Validators.required],
       inServiceCountry: ['', Validators.required],
-      animalType: ['', Validators.required],
+      animalType: ['Dog', Validators.required],
       breed: ['', Validators.required]
     })
 
+    // finds Dog in the database by animalCode and preloads the form with existing
+    // information
     this.animalDataService.getDog(animalCode)
       .subscribe({
         next: (value: any) => {
@@ -75,6 +76,7 @@ export class EditDog {
       })
   }
 
+  // Validates, then sends Dog data to the database
   public onSubmitDog() {
     this.submitted = true;
 
@@ -92,6 +94,7 @@ export class EditDog {
     }
   }
 
+  // function for managing form controls in the html
   get f() { return this.editDogForm.controls;}
 
 }
