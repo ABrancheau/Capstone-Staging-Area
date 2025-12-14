@@ -1,0 +1,58 @@
+[
+    {
+        "code": "DOG001",
+        "name": "Spot",
+        "reserved": "false",
+        "gender": "Male",
+        "age": "1",
+        "weight": "25.6",
+        "acquisitionDate": "05-12-2019",
+        "acquisitionCountry": "United States",
+        "trainingStatus": "Intake",
+        "inServiceCountry": "United States",
+        "animalType": "Dog",
+        "breed": "German Shepherd"
+    },
+    {
+        "code": "DOG002",
+        "name": "Rex",
+        "reserved": "false",
+        "gender": "Male",
+        "age": "3",
+        "weight": "35.2",
+        "acquisitionDate": "02-03-2020",
+        "acquisitionCountry": "United States",
+        "trainingStatus": "Phase I",
+        "inServiceCountry": "United States",
+        "animalType": "Dog",
+        "breed": "Great Dane"
+    },
+    {
+        "code": "DOG003",
+        "name": "Bella",
+        "reserved": "true",
+        "gender": "Female",
+        "age": "4",
+        "weight": "25.6",
+        "acquisitionDate": "12-12-2019",
+        "acquisitionCountry": "Canada",
+        "trainingStatus": "In Service",
+        "inServiceCountry": "Canada",
+        "animalType": "Dog",
+        "breed": "Chihuahua"
+    },
+    {
+        "code": "DOG004",
+        "name": "Rover",
+        "reserved": "false",
+        "gender": "Male",
+        "age": "4",
+        "weight": "25.6",
+        "acquisitionDate": "12-12-2019",
+        "acquisitionCountry": "United States",
+        "trainingStatus": "In Service",
+        "inServiceCountry": "United States",
+        "animalType": "Dog",
+        "breed": "Beagle"
+    }
+]

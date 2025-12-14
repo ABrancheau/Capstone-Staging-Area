@@ -1,0 +1,33 @@
+<div *ngIf="isLoggedIn()">
+    <button (click)="addDog()" class="btn btn-info">Add Dog</button>
+    <button (click)="addMonkey()" class="btn btn-info">Add Monkey</button>
+</div>
+<div class="search">
+    <input type="search" placeholder="filter by training status" #trainingStatus>
+    <button class="searchButton" type="button" (click)="filterResults(trainingStatus.value)">&#x1F50D;</button>
+</div>
+<div class="row">
+    <div class="animalTable" >
+        <table id="animalData">
+            <tr>
+				<th (click)="mergeSort('name')">Name <br/>(click to sort)</th>
+                <th>Animal Type</th>
+				<th>Training Status</th>
+				<th>Reserved</th>
+                <th *ngIf="isLoggedIn()">Edit</th>
+			</tr>
+			<tr *ngFor="let animal of filteredAnimals">
+				<td>{{ animal.name }}</td>
+                <td>{{ animal.animalType }}</td>
+				<td>{{ animal.trainingStatus }}</td>
+				<td>{{ animal.reserved }}</td>
+                <td *ngIf="isLoggedIn() && animal.animalType == 'Dog'">
+                    <button (click)="editDog(animal)" class="btn btn-info">Edit Dog</button>
+                </td>
+                <td *ngIf="isLoggedIn() && animal.animalType == 'Monkey'">
+                    <button (click)="editMonkey(animal)" class="btn btn-info">Edit Monkey</button>
+                </td>
+			</tr>
+        </table>
+    </div>
+</div>

@@ -1,0 +1,91 @@
+body {
+  background-color: #f8f8ff;
+  padding: 50px;
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  margin-left: auto;
+  margin-right: auto;
+  width: fit-content;
+}
+
+a {
+  color: #e30047;
+  text-decoration: none;
+}
+
+img {
+  border: 3px solid #c0c0c0;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+#header {
+  margin-bottom: 20px;
+  margin-top: 20px;
+}
+
+#navigation {
+  clear: both;
+  height: 50px;
+  width: 900px;
+  margin: 0 auto;
+  padding: 1px;
+}
+
+#navigation ul {
+  display: inline-block;
+  width: 900px;
+  list-style: none;
+  margin: 0;
+  padding: 0x;
+}
+ 
+#navigation li {
+  display: inline;
+  float: left;
+  height: 50x;
+  width: 127px;
+  list-style-type: none;
+  padding-left: 1px;
+  text-align: center;
+}
+
+#navigation li a {
+  display: block;
+}
+
+#navigation li.selected a {
+  color: #7b0330;
+}
+
+#navbar-brand{
+  font-size: 14px;
+}
+
+#main {
+  min-height: 1000px;
+}
+
+table{
+  border-collapse: collapse;
+  background-color: white;
+}
+
+#animalTable {
+  background-color: white;
+  width: fit-content;
+}
+
+td, th{
+  border: 1px solid #ddd;
+  padding: 8px;
+  width: 200px;
+}
+
+th {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: left;
+  background-color: #ec0f54;
+  color: white;
+}

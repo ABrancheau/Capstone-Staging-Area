@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8" />
+		<title>Grazioso Salvare Animal Rescue</title>
+		<link rel="stylesheet" href="css/style.css" type="text/css"/>
+	</head>
+	<body>
+		<div id="background">
+			<div id="page">
+				{{> header }}
+				<div id="contents">
+					<div id="main">
+						<h1>Rescue Animal Reservations</h1>
+						<div id="animalTable">
+							<table>
+								<tr>
+									<th>Name</th>
+									<th>Training Status</th>
+									<th>Reserved</th>
+								</tr>
+				{{#each animals}}
+								<tr>
+									<td>{{this.name}}</td>
+									<td>{{this.trainingStatus}}</td>
+									<td>{{this.reserved}}</td>
+								</tr>
+				{{/each}}
+							</table>
+						</div>
+					</div>
+				</div>
+			</div>
+			{{> footer }}
+		</div>
+	</body>
+</html>

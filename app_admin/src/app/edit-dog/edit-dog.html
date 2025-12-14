@@ -1,0 +1,128 @@
+<div class="col-md-4">
+    <h2 class="text-center">Edit Rescue Dog</h2>
+    <form *ngIf="editDogForm" [formGroup]="editDogForm" (ngSubmit)="onSubmitDog()">
+        <div class="form-group">
+            <label>Code:</label>
+            <input type="text" formControlName="code" placeholder="Code" class="form-control" [ngClass]="{ 'is-invalid': submitted && f['code'].errors
+}">
+            <div *ngIf="submitted && f['code'].errors">
+                <div *ngIf="f['code'].errors?.['required']">
+                    Animal code is required
+                </div>
+            </div>
+        </div>
+        <div class="form-group">
+            <label>Name:</label>
+            <input type="text" formControlName="name" placeholder="Name" class="form-control" [ngClass]="{ 'is-invalid': submitted && f['name'].errors
+}">
+            <div *ngIf="submitted && f['name'].errors">
+                <div *ngIf="f['name'].errors?.['required']">
+                    Name is required
+                </div>
+            </div>
+        </div>
+        <div class="form-group">
+            <label>Reserved:</label>
+            <input type="boolean" formControlName="reserved" placeholder="false" class="form-control" [ngClass]="{ 'is-invalid': submitted && f['reserved'].errors
+}">
+            <div *ngIf="submitted && f['reserved'].errors">
+                <div *ngIf="f['reserved'].errors?.['required']">
+                    Reservation status is required
+                </div>
+            </div>
+        </div>
+        <div class="form-group">
+            <label>Gender:</label>
+            <input type="text" formControlName="gender" placeholder="Gender" class="form-control" [ngClass]="{ 'is-invalid': submitted && f['gender'].errors
+}">
+            <div *ngIf="submitted && f['gender'].errors">
+                <div *ngIf="f['gender'].errors?.['required']">
+                    Gender is required
+                </div>
+            </div>
+        </div>
+        <div class="form-group">
+            <label>Age:</label>
+            <input type="text" formControlName="age" placeholder="Age" class="form-control" [ngClass]="{ 'is-invalid': submitted && f['age'].errors
+}">
+            <div *ngIf="submitted && f['age'].errors">
+                <div *ngIf="f['age'].errors?.['required']">
+                    Age is required
+                </div>
+            </div>
+        </div>
+        <div class="form-group">
+            <label>Weight:</label>
+            <input type="text" formControlName="weight" placeholder="Weight" class="form-control" [ngClass]="{ 'is-invalid': submitted &&
+f['weight'].errors }">
+            <div *ngIf="submitted && f['weight'].errors">
+                <div *ngIf="f['weight'].errors?.['required']">
+                    Weight is required
+                </div>
+            </div>
+        </div>
+        <div class="form-group">
+            <label>Acquisition Date:</label>
+            <input type="text" formControlName="acquisitionDate" placeholder="AcquisitionDate" class="form-control" [ngClass]="{ 'is-invalid': submitted && f['acquisitionDate'].errors
+}">
+            <div *ngIf="submitted && f['acquisitionDate'].errors">
+                <div *ngIf="f['acquisitionDate'].errors?.['required']">
+                    Acquisition date is required
+                </div>
+            </div>
+        </div>
+        <div class="form-group">
+            <label>Acquisition Country:</label>
+            <input type="text" formControlName="acquisitionCountry" placeholder="AcquisitionCountry" class="form-control" [ngClass]="{ 'is-invalid': submitted &&
+f['acquisitionCountry'].errors }">
+            <div *ngIf="submitted && f['acquisitionCountry'].errors">
+                <div *ngIf="f['acquisitionCountry'].errors?.['required']">
+                    Acquisition country is required
+                </div>
+            </div>
+        </div>
+        <div class="form-group">
+            <label>Training Status:</label>
+            <input type="text" formControlName="trainingStatus" placeholder="TrainingStatus" class="form-control" [ngClass]="{ 'is-invalid': submitted && f['trainingStatus'].errors
+}">
+            <div *ngIf="submitted && f['trainingStatus'].errors">
+                <div *ngIf="f['trainingStatus'].errors?.['required']">
+                    Training status is required
+                </div>
+            </div>
+        </div>
+        <div class="form-group">
+            <label>In Service Country:</label>
+            <input type="text" formControlName="inServiceCountry" placeholder="InServiceCountry" class="form-control" [ngClass]="{ 'is-invalid': submitted && f['inServiceCountry'].errors
+}">
+            <div *ngIf="submitted && f['inServiceCountry'].errors">
+                <div *ngIf="f['inServiceCountry'].errors?.['required']">
+                    In service country is required
+                </div>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label>Animal Type:</label>
+            <input type="text" formControlName="animalType" readonly class="form-control" [ngClass]="{ 'is-invalid': submitted && f['animalType'].errors
+}">
+            <div *ngIf="submitted && f['animalType'].errors">
+                <div *ngIf="f['animalType'].errors?.['required']">
+                    Animal type is required
+                </div>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label>Breed:</label>
+            <input type="text" formControlName="breed" placeholder="Breed" class="form-control" [ngClass]="{ 'is-invalid': submitted && f['breed'].errors
+}">
+            <div *ngIf="submitted && f['breed'].errors">
+                <div *ngIf="f['breed'].errors?.['required']">
+                    Breed is required
+                </div>
+            </div>
+        </div>
+        <button type="submit" class="btn btn-info">Save</button>
+    </form>
+</div>
